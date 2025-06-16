@@ -4,9 +4,12 @@
     <meta charset="utf-8" />
     <title>LINE公式運用予算とLINE拡張ツールの比較</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
-    <link rel="stylesheet" href="reveal.js/dist/theme/white.css" id="theme" />
+
+    <!-- Reveal.js CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css" id="theme" />
+
+    <!-- GLightbox CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   </head>
   <body>
@@ -28,12 +31,10 @@
 <section>
   <h2>LINE公式＋拡張ツールの運用コスト</h2>
 
-  <!-- メッセージ -->
   <p style="text-align: center; font-size: 1.1rem; margin-bottom: 1em;">
     LINEツール利用料＋LINE公式の配信料が運用コストとして発生
   </p>
 
-  <!-- 横並び画像 -->
   <div style="
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -44,7 +45,6 @@
     margin: 0 auto;
   ">
 
-    <!-- 画像① -->
     <div style="text-align: center;">
       <div style="font-size: 0.9rem; font-weight: bold; margin-bottom: 0.3em;">
         LINEツール/ベンダー利用料（L Message導入の場合）
@@ -56,7 +56,6 @@
       </a>
     </div>
 
-    <!-- 画像② -->
     <div style="text-align: center;">
       <div style="font-size: 0.9rem; font-weight: bold; margin-bottom: 0.3em;">
         LINE公式配信料
@@ -74,12 +73,6 @@
 <section>
   <h2>LINE拡張ツール比較</h2>
   <p style="text-align: center;">（ここに比較表を挿入、またはGLightbox画像リンクとして表示）</p>
-  <!-- 画像がある場合、以下のようにGLightbox対応で挿入 -->
-  <!--
-  <a href="images/comparison.png" class="glightbox">
-    <img src="images/comparison.png" alt="LINE拡張ツール比較" style="width: 80%; display: block; margin: 0 auto;" />
-  </a>
-  -->
 </section>
 
 <!-- スライド終了 -->
@@ -87,7 +80,8 @@
       </div>
     </div>
 
-    <script src="reveal.js/dist/reveal.js"></script>
+    <!-- Reveal.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.min.js"></script>
     <script>
       Reveal.initialize({
         controls: true,
@@ -96,6 +90,8 @@
         hash: true,
       });
     </script>
+
+    <!-- GLightbox CDN -->
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
       const lightbox = GLightbox({

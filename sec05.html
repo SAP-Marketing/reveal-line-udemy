@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>LINE公式運用予算とLINE拡張ツールの比較</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Reveal.js CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css" id="theme" />
+
+    <!-- GLightbox CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+<!-- スライド開始 -->
+
+<section
+  data-background-image="images/S5head.png"
+  data-background-size="cover"
+  data-background-position="center"
+>
+  <h1 style="color: white; background: rgba(0,0,0,0.4); padding: 1em;">
+    LINE公式運用予算と<br>LINE拡張ツールの比較
+  </h1>
+</section>
+
+<section>
+  <h2>LINE公式＋拡張ツールの運用コスト</h2>
+
+  <p style="text-align: center; font-size: 1.1rem; margin-bottom: 1em;">
+    LINEツール利用料＋LINE公式の配信料が運用コストとして発生
+  </p>
+
+  <div style="
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2%;
+    align-items: start;
+    width: 100%;
+    max-width: 95vw;
+    margin: 0 auto;
+  ">
+
+    <div style="text-align: center;">
+      <div style="font-size: 0.9rem; font-weight: bold; margin-bottom: 0.3em;">
+        LINEツール/ベンダー利用料（L Message導入の場合）
+      </div>
+      <a href="images/Lmessgae_price.png" class="glightbox">
+        <img src="images/Lmessgae_price.png"
+             alt="LINEツール利用料"
+             style="width: 100%; height: auto;" />
+      </a>
+    </div>
+
+    <div style="text-align: center;">
+      <div style="font-size: 0.9rem; font-weight: bold; margin-bottom: 0.3em;">
+        LINE公式配信料
+      </div>
+      <a href="https://vos.line-scdn.net/biz-learning-release-media/images/1d47dec8c0a70a9e2bf4c48c94cdfde6fbaa0de4fa53e37a58fd1499d9212dc5.png" class="glightbox">
+        <img src="https://vos.line-scdn.net/biz-learning-release-media/images/1d47dec8c0a70a9e2bf4c48c94cdfde6fbaa0de4fa53e37a58fd1499d9212dc5.png"
+             alt="LINE公式配信料"
+             style="width: 100%; height: auto;" />
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>LINE拡張ツール比較</h2>
+  <p style="text-align: center;">（ここに比較表を挿入、またはGLightbox画像リンクとして表示）</p>
+</section>
+
+<!-- スライド終了 -->
+
+      </div>
+    </div>
+
+    <!-- Reveal.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.min.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        slideNumber: true,
+        hash: true,
+      });
+    </script>
+
+    <!-- GLightbox CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+      const lightbox = GLightbox({
+        selector: '.glightbox'
+      });
+    </script>
+  </body>
+</html>

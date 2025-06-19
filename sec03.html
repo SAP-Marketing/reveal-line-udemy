@@ -25,7 +25,7 @@
               // 青を基調としたブランドカラーパレットを定義
               'primary-blue': '#1E3A8A',   // 最も濃い青 (見出しなど)
               'secondary-blue': '#2563EB', // 主要な青 (強調色、リンクなど)
-              'tertiary-blue': '#4F46E5', // SVG用にもう一つ青を追加 (既存の値を維持)
+              'tertiory-blue': '#4F46E5', // SVG用にもう一つ青を追加 (既存の値を維持)
               'light-blue': '#BFDBFE',     // 明るい青 (背景やアクセント)
               'text-dark': '#1F2937',      // 濃いテキスト色
               'text-light': '#374151',     // やや明るいテキスト色
@@ -89,10 +89,10 @@
       /* 本文とリストのスタイル */
       p, ul, ol { /* p, ul, ol にも基本テキスト色を適用 */
         color: var(--tw-colors-text-light); /* 落ち着いたグレーを本文色に設定 */
+        font-size: 1.5rem; /* フォントサイズを調整 (拡大) */
       }
       p, li {
         line-height: 1.8; /* 行間を広げて読みやすく */
-        font-size: 1.25rem; /* フォントサイズを調整 */
       }
       ul {
         list-style-type: none; /* デフォルトのリストスタイルを無効化 */
@@ -129,7 +129,7 @@
         width: 100%;
         border-collapse: collapse; /* ボーダーの重複を避ける */
         margin-top: 2rem;
-        font-size: 1.1rem;
+        font-size: 1.25rem; /* フォントサイズを調整 (拡大) */
       }
       th, td {
         border: 1px solid var(--tw-colors-light-blue); /* 青系のボーダー */
@@ -286,13 +286,13 @@
           padding: 0.05rem; /* Minimal padding */
       }
       .feature-name {
-          font-size: 0.9rem; /* Smaller feature name */
+          font-size: 1.1rem; /* Smaller feature name (adjusted) */
           font-weight: 600;
           color: var(--tw-colors-primary-blue); /* Adjusted to primary-blue */
           line-height: 1.2; /* Tighter line height */
       }
       .feature-description {
-          font-size: 0.7rem; /* Smaller description */
+          font-size: 0.9rem; /* Smaller description (adjusted) */
           color: var(--tw-colors-gray-600); /* Adjusted to Tailwind gray-600 */
           margin-top: 0.1rem; /* Reduced margin */
           line-height: 1.2; /* Tighter line height */

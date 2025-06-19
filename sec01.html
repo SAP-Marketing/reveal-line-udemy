@@ -85,10 +85,10 @@
       /* 本文とリストのスタイル */
       p, ul, ol { /* p, ul, ol にも基本テキスト色を適用 */
         color: var(--tw-colors-text-light); /* 落ち着いたグレーを本文色に設定 */
+        font-size: 1.5rem; /* フォントサイズを調整 (拡大) */
       }
       p, li {
         line-height: 1.8; /* 行間を広げて読みやすく */
-        font-size: 1.25rem; /* フォントサイズを調整 */
       }
       ul {
         list-style-type: none; /* デフォルトのリストスタイルを無効化 */
@@ -118,6 +118,30 @@
       ol.custom-marker li::marker { /* カスタムマーカーの色 */
         color: var(--tw-colors-secondary-blue);
         font-weight: bold;
+      }
+
+      /* テーブルのスタイル */
+      table {
+        width: 100%;
+        border-collapse: collapse; /* ボーダーの重複を避ける */
+        margin-top: 2rem;
+        font-size: 1.25rem; /* フォントサイズを調整 (拡大) */
+      }
+      th, td {
+        border: 1px solid var(--tw-colors-light-blue); /* 青系のボーダー */
+        padding: 0.8rem 1.2rem;
+        text-align: left;
+      }
+      th {
+        background-color: var(--tw-colors-light-blue); /* 薄い青のヘッダー背景 */
+        color: var(--tw-colors-primary-blue); /* 濃い青のテキスト */
+        font-weight: 700;
+      }
+      tbody tr:nth-child(even) { /* 偶数行の背景色 */
+        background-color: var(--tw-colors-bg-light);
+      }
+      tbody tr:hover { /* ホバー時の背景色 */
+        background-color: rgba(var(--tw-colors-light-blue), 0.3);
       }
 
       /* Reveal.js UI要素のスタイル調整 */
@@ -153,7 +177,7 @@
     <p class="text-xl text-gray-500">2025年6月19日</p>
     <p class="text-xl text-gray-600 font-semibold mt-2">担当: 山田 太郎</p>
   </div>
-  </aside>
+  <!-- asideタグは削除 -->
 </section>
 
 <!-- スライド 2：イメージ (デザインを参考コードに合わせて調整) -->
@@ -207,7 +231,7 @@
     <li>競合分析（Ubersuggest、Dockpitなどプロツールを使用）</li>
     <li>X（旧Twitter）運用戦略と実行</li>
     <li>Google広告等の<strong class="font-semibold">運用型広告の最適化</strong></li>
-    <li>SEO / メディア運用の全体統括</li>
+    <li>SEO / メディア運用</li>
   </ul>
 </section>
 

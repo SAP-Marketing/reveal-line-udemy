@@ -2,163 +2,146 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>LINE構築クライアントワーク 習得講座</title>
+    <title>爆速 × AI × モダンデザイン！ChatGPTで作るHTMLスライド講座【Reveal.js × Tailwind CSS】</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <!-- Reveal.js CDN (参考コードに合わせてバージョンを更新) -->
+    <!-- Reveal.js CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css" />
-    <!-- テーマはカスタムCSSで制御するため、reveal.cssのみ使用 -->
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
-      // Tailwind CSSのカスタム設定
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              // 青を基調としたブランドカラーパレットを定義
-              'primary-blue': '#1E3A8A',   // 最も濃い青 (見出しなど)
-              'secondary-blue': '#2563EB', // 主要な青 (強調色、リンクなど)
-              'light-blue': '#BFDBFE',     // 明るい青 (背景やアクセント)
-              'text-dark': '#1F2937',      // 濃いテキスト色
-              'text-light': '#374151',     // やや明るいテキスト色
-              'bg-light': '#F0F9FF',      // 全体の背景に使う非常に薄い青
+              'primary-blue': '#1E3A8A',
+              'secondary-blue': '#2563EB',
+              'light-blue': '#BFDBFE',
+              'text-dark': '#1F2937',
+              'text-light': '#374151',
+              'bg-light': '#F0F9FF',
             }
           }
         }
       }
     </script>
     <style>
-      /* 全体的なスタイル調整 */
       body {
-          font-family: 'Inter', 'Noto Sans JP', sans-serif; /* Google Fontsを適用 */
+        font-family: 'Inter', 'Noto Sans JP', sans-serif;
       }
       .reveal {
-        background-color: var(--tw-colors-bg-light); /* Tailwindで定義した背景色を使用 */
+        background-color: var(--tw-colors-bg-light);
       }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-        font-family: 'Inter', 'Noto Sans JP', sans-serif; /* 見出しにもGoogle Fontsを適用 */
-        color: var(--tw-colors-primary-blue); /* 濃い青を見出し色に設定 */
-        font-weight: 800; /* さらに太字 */
+        font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        color: var(--tw-colors-primary-blue);
+        font-weight: 800;
       }
-
       .reveal .slides {
-          text-align: left; /* スライド全体を左寄せに設定 */
+        text-align: left;
       }
-
-      /* 各スライドセクションの共通スタイル */
-      .reveal .slides section:not(.title-slide) { /* タイトルスライド以外に適用 */
-        background-color: #FFFFFF; /* 各スライドの背景は白 */
-        border-radius: 1.5rem; /* 角をさらに丸くしてモダンに */
-        padding: 4rem; /* 上下のパディングを確保 */
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* 影を強化 */
-        border: 1px solid rgba(220, 230, 250, 0.5); /* 控えめなボーダーを追加 */
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* ホバーエフェクト用トランジション */
+      .reveal .slides section:not(.title-slide) {
+        background-color: #FFFFFF;
+        border-radius: 1.5rem;
+        padding: 4rem;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border: 1px solid rgba(220, 230, 250, 0.5);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
       }
       .reveal .slides section:not(.title-slide):hover {
-          transform: translateY(-5px); /* ホバーで少し上に移動 */
-          box-shadow: 0 30px 40px -10px rgba(0, 0, 0, 0.15), 0 15px 15px -8px rgba(0, 0, 0, 0.06); /* ホバーで影を強調 */
+        transform: translateY(-5px);
+        box-shadow: 0 30px 40px -10px rgba(0, 0, 0, 0.15), 0 15px 15px -8px rgba(0, 0, 0, 0.06);
       }
-
-      /* H2見出しのスタイル (参考コードに合わせる) */
       .reveal h2 {
-        font-size: 3.5rem; /* 各スライドのタイトルは大きめを維持 */
+        font-size: 3.5rem;
         line-height: 1.3;
-        margin-bottom: 2.5rem; /* 見出し下の余白 */
-        padding-bottom: 1rem; /* 下線との間のパディング */
-        border-bottom: 4px solid var(--tw-colors-secondary-blue); /* 青色の下線 */
-        display: inline-block; /* 下線の幅をテキストに合わせる */
+        margin-bottom: 2.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 4px solid var(--tw-colors-secondary-blue);
+        display: inline-block;
       }
-      
       h3 {
-        font-size: 2.25rem; /* サブ見出し */
+        font-size: 2.25rem;
         line-height: 1.4;
       }
-
-      /* 本文とリストのスタイル */
-      p, ul, ol { /* p, ul, ol にも基本テキスト色を適用 */
-        color: var(--tw-colors-text-light); /* 落ち着いたグレーを本文色に設定 */
-        font-size: 1.5rem; /* フォントサイズを調整 (拡大) */
+      p, ul, ol {
+        color: var(--tw-colors-text-light);
+        font-size: 1.5rem;
       }
       p, li {
-        line-height: 1.8; /* 行間を広げて読みやすく */
+        line-height: 1.8;
       }
       ul {
-        list-style-type: none; /* デフォルトのリストスタイルを無効化 */
-        margin-top: 1.5rem; /* リスト上の余白 */
+        list-style-type: none;
+        margin-top: 1.5rem;
       }
       ul li {
-        padding-left: 1.5em; /* チェックマークのための左パディング */
-        position: relative; /* チェックマークの位置指定用 */
-        margin-bottom: 0.75rem; /* リストアイテム間の余白 */
+        padding-left: 1.5em;
+        position: relative;
+        margin-bottom: 0.75rem;
       }
-      /* チェックマークのスタイル (修正) */
       ul li::before {
-          content: '✔'; /* チェックマーク文字 */
-          position: absolute;
-          left: 0; /* 左端に配置 */
-          color: var(--tw-colors-secondary-blue); /* 青色のチェックマーク */
-          font-weight: bold;
-          font-size: 1.1em; /* チェックマークのサイズ調整 */
+        content: '✔';
+        position: absolute;
+        left: 0;
+        color: var(--tw-colors-secondary-blue);
+        font-weight: bold;
+        font-size: 1.1em;
       }
-      ol { /* 順序付きリストのスタイル */
-        list-style-type: decimal; /* デフォルトの数字リスト */
-        list-style-position: inside; /* 数字を内側に配置 */
+      ol {
+        list-style-type: decimal;
+        list-style-position: inside;
       }
       ol li {
         margin-bottom: 1rem;
       }
-      ol.custom-marker li::marker { /* カスタムマーカーの色 */
+      ol.custom-marker li::marker {
         color: var(--tw-colors-secondary-blue);
         font-weight: bold;
       }
-
-      /* テーブルのスタイル */
       table {
         width: 100%;
-        border-collapse: collapse; /* ボーダーの重複を避ける */
+        border-collapse: collapse;
         margin-top: 2rem;
-        font-size: 1.25rem; /* フォントサイズを調整 (拡大) */
+        font-size: 1.25rem;
       }
       th, td {
-        border: 1px solid var(--tw-colors-light-blue); /* 青系のボーダー */
+        border: 1px solid var(--tw-colors-light-blue);
         padding: 0.8rem 1.2rem;
         text-align: left;
       }
       th {
-        background-color: var(--tw-colors-light-blue); /* 薄い青のヘッダー背景 */
-        color: var(--tw-colors-primary-blue); /* 濃い青のテキスト */
+        background-color: var(--tw-colors-light-blue);
+        color: var(--tw-colors-primary-blue);
         font-weight: 700;
       }
-      tbody tr:nth-child(even) { /* 偶数行の背景色 */
+      tbody tr:nth-child(even) {
         background-color: var(--tw-colors-bg-light);
       }
-      tbody tr:hover { /* ホバー時の背景色 */
+      tbody tr:hover {
         background-color: rgba(var(--tw-colors-light-blue), 0.3);
       }
-
-      /* Reveal.js UI要素のスタイル調整 */
       .reveal .controls button {
-        color: var(--tw-colors-primary-blue); /* コントロールボタンの色をprimary-blueに設定 */
+        color: var(--tw-colors-primary-blue);
+        fill: var(--tw-colors-primary-blue);
         opacity: 0.8;
         transition: opacity 0.2s ease-in-out;
-        font-size: 1.5rem; /* ページ送りボタンのサイズを小さく調整 */
       }
       .reveal .controls button:hover {
         opacity: 1;
       }
       .reveal .progress span {
-        background-color: var(--tw-colors-secondary-blue); /* 進捗バーの色 */
+        background-color: var(--tw-colors-secondary-blue);
       }
       .reveal .slide-number {
-        color: var(--tw-colors-secondary-blue); /* スライド番号の色 */
+        color: var(--tw-colors-secondary-blue);
         font-size: 1rem;
         opacity: 0.7;
       }
@@ -168,94 +151,66 @@
     <div class="reveal">
       <div class="slides">
 
-<!-- スライド 1：タイトルスライド (Udemy講座向けに内容を修正) -->
 <section class="text-center title-slide" data-background-gradient="linear-gradient(to bottom, var(--tw-colors-bg-light), var(--tw-colors-light-blue))">
   <h1 class="text-5xl md:text-6xl font-extrabold text-primary-blue my-6 leading-tight">
-    <span class="text-secondary-blue">LINE構築クライアントワーク</span><br>習得講座
+    <span class="text-secondary-blue">爆速 × AI × モダンデザイン！</span><br>ChatGPTで作るHTMLスライド講座<br><span class="text-xl">【Reveal.js × Tailwind CSS】</span>
   </h1>
   <div class="mt-16">
-    <p class="text-xl text-gray-500">2025年6月19日</p>
-    <p class="text-xl text-gray-600 font-semibold mt-2">担当: 山田 太郎</p>
-  </div>
-  <!-- asideタグは削除 -->
-</section>
-
-<!-- スライド 2：イメージ (デザインを参考コードに合わせて調整) -->
-<section class="px-8 flex flex-col justify-center">
-  <h2>イメージ</h2>
-  <p class="text-xl text-text-light leading-relaxed mb-10">
-    この講座で習得する<strong class="text-secondary-blue">全体像</strong>や<strong class="text-secondary-blue">ゴールイメージ</strong>を伝えるスライドです。<br>
-    必要に応じて、ここに図解や魅力的な画像を追加して視覚的に分かりやすく表現しましょう。
-  </p>
-  <div class="mt-8 flex justify-center items-center">
-    <!-- ここに具体的なイメージ画像やフローチャートを配置 -->
-    <div class="w-2/3 h-72 bg-light-blue flex items-center justify-center rounded-xl shadow-inner text-primary-blue text-2xl font-bold opacity-80">
-      [ここに講座の全体像を示すイメージやフロー図を挿入]
-    </div>
+    <p class="text-xl text-gray-500">第1章：はじめに</p>
+    <p class="text-xl text-gray-600 font-semibold mt-2">担当: マーケティングコンサルタントSAP</p>
   </div>
 </section>
 
-<!-- スライド 3：自己紹介（経歴） (デザインを参考コードに合わせて調整) -->
-<section class="px-8 flex flex-col justify-center">
-  <h2>自己紹介</h2>
-  <h3 class="text-secondary-blue mb-6">【経歴】</h3>
-  <ul class="pl-8 space-y-5 text-xl text-text-light">
-    <li>本業：<strong class="font-semibold">上場インターネット配信企業 部長職</strong>（7年目）</li>
-    <li>WEBマーケティング、事業戦略、事業運営と管理に深く関与</li>
-    <li>経験業界：教育・人材、インターネット配信（EC、メディア）</li>
-    <li>年間 <strong class="font-semibold">約1億円</strong> のマーケティング予算を運用</li>
+<section>
+  <h2>こんな悩みありませんか？</h2>
+  <ul>
+    <li>パワポ・Googleスライドでは限界を感じている</li>
+    <li>AIで作ったけど思い通りの見た目にならない</li>
+    <li>HTML/CSSって聞くだけで無理と思ってしまう</li>
   </ul>
 </section>
 
-<!-- スライド 4：実績 (デザインを参考コードに合わせて調整) -->
-<section class="px-8 flex flex-col justify-center">
-  <h2>主な実績</h2>
-  <ul class="pl-8 space-y-5 text-xl text-text-light">
-    <li>e-learning事業を複数立ち上げ → <strong class="font-semibold">売上数億円規模</strong>へ成長を牽引</li>
-    <li>企業公式YouTube立ち上げ（<strong class="font-semibold">登録9,000名超</strong>、年間<strong class="font-semibold">70万再生</strong>達成）</li>
-    <li>企業公式X（旧Twitter）立ち上げ（<strong class="font-semibold">フォロワー5,000名超</strong>、年間<strong class="font-semibold">100万imp</strong>）</li>
-    <li>企業公式LINE立ち上げ（<strong class="font-semibold">友だち23,000人超</strong>を獲得）</li>
-    <li>副業でもLINE公式アカウント構築案件を多数経験</li>
+<section>
+  <h2>この講座でできること</h2>
+  <ul>
+    <li>HTMLやCSSを知らなくてもモダンスライドを作成</li>
+    <li>ChatGPT × Reveal.js × Tailwindで爆速スライド</li>
+    <li>Udemy講師のような美しい資料が自作できる</li>
   </ul>
 </section>
 
-<!-- スライド 5：できること (デザインを参考コードに合わせて調整) -->
-<section class="px-8 flex flex-col justify-center">
-  <h2>マーケティングの経験・できること</h2>
-  <ul class="grid grid-cols-2 gap-x-12 gap-y-6 text-xl text-text-light pl-8">
-    <li>WEBマーケティング戦略の立案</li>
-    <li>LINE公式アカウント構築</li>
-    <li>LINE拡張ツール導入（L Message等）</li>
-    <li>WordPressによるサイト構築</li>
-    <li>GA4、GTM、AdEbis、Looker Studioを活用した<strong class="font-semibold">高度なデータ分析</strong></li>
-    <li>競合分析（Ubersuggest、Dockpitなどプロツールを使用）</li>
-    <li>X（旧Twitter）運用戦略と実行</li>
-    <li>Google広告等の<strong class="font-semibold">運用型広告の最適化</strong></li>
-    <li>SEO / メディア運用</li>
+<section>
+  <h2>講師の紹介</h2>
+  <p>この講座の講師は、もともとHTMLやCSSが苦手な非エンジニア。</p>
+  <p>ChatGPTに聞きながら、スライドを一から構築してきました。</p>
+  <p>だからこそ「初心者がつまずくポイント」がわかります。</p>
+</section>
+
+<section>
+  <h2>この章のゴール</h2>
+  <ul>
+    <li>講座全体のイメージをつかむ</li>
+    <li>Reveal.jsって何？をざっくり理解する</li>
+    <li>「自分にもできそう！」と思えるようになる</li>
   </ul>
 </section>
 
       </div>
     </div>
 
-    <!-- Reveal.js JS（CDN） (参考コードに合わせてバージョンを更新) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/notes/notes.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/markdown/markdown.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.js"></script>
     <script>
-      // Reveal.jsの初期化設定
       Reveal.initialize({
-        controls: true, // ナビゲーションコントロールを表示
-        progress: true, // 進捗バーを表示
-        slideNumber: 'h/v', // スライド番号を「現在のスライド/総スライド数」形式で表示
-        // hash: true, // 環境によってはエラーとなるため、コメントアウトを維持
-        center: true, // スライドを垂直方向中央に配置
-        transition: 'slide', // スライド切り替えのアニメーションを「slide」に設定
-        width: 1152, // スライドの幅を参考コードに合わせる
-        height: 648, // スライドの高さを参考コードに合わせる
-        
-        // 利用可能なプラグイン (参考コードに合わせる)
+        controls: true,
+        progress: true,
+        slideNumber: 'h/v',
+        center: true,
+        transition: 'slide',
+        width: 1152,
+        height: 648,
         plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
       });
     </script>

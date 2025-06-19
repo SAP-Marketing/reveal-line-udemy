@@ -147,9 +147,10 @@
       /* Reveal.js UI要素のスタイル調整 */
       .reveal .controls button {
         color: var(--tw-colors-primary-blue); /* コントロールボタンの色をprimary-blueに設定 */
+        fill: var(--tw-colors-primary-blue);
         opacity: 0.8;
         transition: opacity 0.2s ease-in-out;
-        font-size: 1.5rem; /* ページ送りボタンのサイズを小さく調整 */
+        /* font-sizeはデフォルトに戻すため削除 */
       }
       .reveal .controls button:hover {
         opacity: 1;
